@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "AppReactCourse",
+    "slug": "AppReactCourse",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
