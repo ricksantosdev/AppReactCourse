@@ -7,4 +7,4 @@ import App from './App';
 // the environment is set up appropriately
 registerRootComponent(App);
 
-/*teste*/
+/*teste de cu eh rola*/
