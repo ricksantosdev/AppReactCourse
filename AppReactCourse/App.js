@@ -1,32 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet, Button , View} from 'react-native';
+import PropsReact from './src/pages/PropsReact';
+import StateReact from './src/pages/StatesReact';
 
 
 
-export default class App extends Component{
-  render(){
-    let nomeProgramador = 'Ricardo Santos de jesus';
-    let idade = 39;
-    let diasIdade = 354;
+export default function App(){
+  const Stack = createStackNavigator();
+
+
     return(
-      <View style={styles.container}>
-      <Text style={{color:'red', fontSize:40 , margin:10 }}> Ola mundo porra </Text>
-      {/* COMENTANDO A IMAGEM ANTERIOR -- PARA USAR O COMPONENTE DE IMAGEM
-      <Image source={{uri:'https://sujeitoprogramador.com/steve.png'}}
-      style={{width:300 , height:300}}
-    /> */}
-    <ImageJobs largura={200} 
-    altura={300}  
-    endereco="https://thumbs.dreamstime.com/b/steve-jobs-wax-figure-madame-tussauds-museum-istanbul-turkey-march-was-co-founder-chairman-chief-executive-officer-102591903.jpg"/>
-    
-    <Text style={{ fontSize:20, margin:10, color:'green' }}> Nome do Programador:  {nomeProgramador} </Text>
-    <Text style={styles.texto}>  Idade {idade} e dias {diasIdade} </Text>
-    <StatusBar style="auto" />
-    </View>
+     <View styles={styles.container}>
+        <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="PropsReact" component={PropsReact}/>
+          <Stack.Screen name="StateReact" component={StateReact}/> 
+        </Stack.Navigator>
+      </NavigationContainer>
+
+
+     </View>
     );
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -43,14 +42,3 @@ const styles = StyleSheet.create({
   }
 });
 
-/* Componente para renderizar imagem */
-class ImageJobs extends Component{
-  render(){
-    let enderecoImagem = this.props.endereco;
-    return(
-      <View>
-        <Image  source={{uri: enderecoImagem}} style={{width:this.props.largura  , height: this.props.altura }} />
-      </View>
-    );
-  }
-}
