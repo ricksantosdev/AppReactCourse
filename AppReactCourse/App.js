@@ -1,10 +1,12 @@
 
 import React, {Component} from 'react';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet, Button , View} from 'react-native';
-import PropsReact from './src/pages/PropsReact';
+import { StyleSheet, Button , View, Text} from 'react-native';
 import StateReact from './src/pages/StatesReact';
+import PropsReact from './src/pages/PropsReact';
+import Menu from './src/pages/AppMenu';
+
 
 
 
@@ -13,16 +15,16 @@ export default function App(){
 
 
     return(
-     <View styles={styles.container}>
+
         <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="PropsReact" component={PropsReact}/>
+        <Stack.Screen name="Menu" component={Menu}/> 
           <Stack.Screen name="StateReact" component={StateReact}/> 
+          <Stack.Screen name="PropsReact" component={PropsReact}/>
+         
         </Stack.Navigator>
       </NavigationContainer>
 
-
-     </View>
     );
   }
 
