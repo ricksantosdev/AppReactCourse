@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -7,20 +6,30 @@ import StateReact from './src/pages/StatesReact';
 import PropsReact from './src/pages/PropsReact';
 import Menu from './src/pages/AppMenu';
 
-
-
-
 export default function App(){
   const Stack = createStackNavigator();
-
 
     return(
 
         <NavigationContainer>
         <Stack.Navigator>
-        <Stack.Screen name="Menu" component={Menu}/> 
-          <Stack.Screen name="StateReact" component={StateReact}/> 
-          <Stack.Screen name="PropsReact" component={PropsReact}/>
+          <Stack.Screen name="Menu" component={Menu}
+          options={{
+            headerShown:false,
+          }}
+          
+          /> 
+          <Stack.Screen name="StateReact" component={StateReact}
+          options={{
+            headerShown:false,
+          }}
+          /> 
+          <Stack.Screen name="PropsReact" component={PropsReact}
+            options={{
+              headerShown:false,
+            }}
+          
+          />
          
         </Stack.Navigator>
       </NavigationContainer>

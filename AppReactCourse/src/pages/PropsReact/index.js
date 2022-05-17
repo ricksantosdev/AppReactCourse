@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
 import {View , Text , StyleSheet, Button, Image} from 'react-native';
+   
 import { useNavigation } from '@react-navigation/native';
-
 export default function PropsReact() {
-
+        const navigation = useNavigation();
         let nomeProgramador = 'Ricardo Santos de jesus';
         let idade = 39;
         let diasIdade = 354;
@@ -24,8 +24,7 @@ export default function PropsReact() {
         <Text style={{ fontSize:20, margin:10, color:'green' }}> Nome do Programador:  {nomeProgramador} </Text>
         <Text style={styles.texto}>  Idade {idade} e dias {diasIdade} </Text>
 
-        
-
+        <Button title='Menu' onPress={() => navigation.navigate('Menu')}/>
         </View>
         );
       
