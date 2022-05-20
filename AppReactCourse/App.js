@@ -6,35 +6,42 @@ import StateReact from './src/pages/StatesReact';
 import PropsReact from './src/pages/PropsReact';
 import Menu from './src/pages/AppMenu';
 
-export default function App(){
-  const Stack = createStackNavigator();
+let Stack = createStackNavigator();
+export default class App extends Component{
+  constructor(props){
+    super(props);
+  }
+ 
+ render(){
 
-    return(
+  return(
 
-        <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Menu" component={Menu}
-          options={{
-            headerShown:false,
-          }}
-          
-          /> 
-          <Stack.Screen name="StateReact" component={StateReact}
-          options={{
-            headerShown:false,
-          }}
-          /> 
-          <Stack.Screen name="PropsReact" component={PropsReact}
-            options={{
-              headerShown:false,
-            }}
-          
-          />
-         
-        </Stack.Navigator>
-      </NavigationContainer>
+    <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Menu" component={Menu}
+      options={{
+        headerShown:false,
+      }}
+      
+      /> 
+      <Stack.Screen name="StateReact" component={StateReact}
+      options={{
+        headerShown:false,
+      }}
+      /> 
+      <Stack.Screen name="PropsReact" component={PropsReact}
+        options={{
+          headerShown:false,
+        }}
+      
+      />
+     
+    </Stack.Navigator>
+  </NavigationContainer>
 
-    );
+);
+ }
+
   }
 
 

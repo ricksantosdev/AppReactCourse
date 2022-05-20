@@ -1,23 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {View , Text , StyleSheet, Button} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { render } from 'react-dom';
 
 
-export default function Menu() {
-    const navigation = useNavigation();
+export default class Menu extends Component {
 
-    return(
-        <View style={styles.container}>
-            <View style={styles.viewComponents}>
-            <Button style={styles.button} title='Props' onPress={() => navigation.navigate('PropsReact')}/>
+    constructor(props){
+        super(props);
+    }
+
+     render() {
+        return(
+            <View style={styles.container}>
+                <View style={styles.viewComponents}>
+                <Button style={styles.button} title='Props' onPress={() => this.props.navigation.navigate('PropsReact')}/>
+                </View>
+               <View style={styles.viewComponents}>
+               <Button style={styles.button} title='State' onPress={() => this.props.navigation.navigate('StateReact')} />
+               </View>
+               
             </View>
-           <View style={styles.viewComponents}>
-           <Button style={styles.button} title='State' onPress={() => navigation.navigate('StateReact')} />
-           </View>
-           
-        </View>
+    
+        );
+     }
 
-    );
 }
 
 const styles = StyleSheet.create({
