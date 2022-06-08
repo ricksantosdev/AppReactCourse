@@ -19,7 +19,12 @@ export default class Menu extends Component {
                <View style={styles.viewComponents}>
                <Button style={styles.button} title='State' onPress={() => this.props.navigation.navigate('StateReact')} />
                </View>
-               
+               <View style={styles.viewComponents}>
+               <Button style={styles.button} title='Grupo Estilo' onPress={() => this.props.navigation.navigate('GruposEstilo')} />
+               </View>
+               <View style={styles.viewComponents}>
+               <Button style={styles.button} title='Flex Alinhamento' onPress={() => this.props.navigation.navigate('FlexAlinhamento')} />
+               </View>
             </View>
     
         );

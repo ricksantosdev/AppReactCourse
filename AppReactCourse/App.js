@@ -5,6 +5,8 @@ import { StyleSheet, Button , View, Text} from 'react-native';
 import StateReact from './src/pages/StatesReact';
 import PropsReact from './src/pages/PropsReact';
 import Menu from './src/pages/AppMenu';
+import GruposEstilo from './src/pages/GruposEstilo'
+import FlexAlinhamento from './src/pages/FlexBox';
 
 let Stack = createStackNavigator();
 export default class App extends Component{
@@ -33,7 +35,16 @@ export default class App extends Component{
         options={{
           headerShown:false,
         }}
-      
+      />
+      <Stack.Screen name="GruposEstilo" component={GruposEstilo}
+        options={{
+          headerShown:false,
+        }}
+      />
+      <Stack.Screen name="FlexAlinhamento" component={FlexAlinhamento}
+        options={{
+          headerShown:false,
+        }}
       />
      
     </Stack.Navigator>
