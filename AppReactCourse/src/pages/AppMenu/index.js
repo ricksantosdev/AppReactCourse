@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import {View , Text , StyleSheet, Button} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { render } from 'react-dom';
-
 
 export default class Menu extends Component {
 
