@@ -7,6 +7,9 @@ import PropsReact from './src/pages/PropsReact';
 import Menu from './src/pages/AppMenu';
 import GruposEstilo from './src/pages/GruposEstilo'
 import FlexAlinhamento from './src/pages/FlexBox';
+import Aula_2 from './src/pages/Aula_2';
+import Aula_3 from './src/pages/Aula_3';
+import Aula_4 from './src/pages/Aula_4';
 
 let Stack = createStackNavigator();
 export default class App extends Component{
@@ -46,19 +49,34 @@ export default class App extends Component{
           headerShown:false,
         }}
       />
-     
+      <Stack.Screen name="Aula_2" component={Aula_2}
+        options={{
+          headerShown:false,
+        }}
+      />
+       <Stack.Screen name="Aula_3" component={Aula_3}
+        options={{
+          headerShown:false,
+        }}
+      />
+      <Stack.Screen name="Aula_4" component={Aula_4}
+        options={{
+          headerShown:false,
+        }}
+      />
+
+
     </Stack.Navigator>
   </NavigationContainer>
 
 );
- }
-
-  }
+}
+}
 
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
