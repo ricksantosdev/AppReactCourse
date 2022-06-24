@@ -1,5 +1,5 @@
 import React , {Component} from "react";
-import {View , Button , Text, TextInput, StyleSheet} from 'react-native';
+import {View , Button , Text, TextInput, StyleSheet , TouchableOpacity} from 'react-native';
 
 export default class Aula_4 extends Component{
     constructor(props){
@@ -37,7 +37,7 @@ export default class Aula_4 extends Component{
         let val2 = parseFloat(this.state.valor2);
         resultadoCalculo = val1 - val2;
 
-        this.setState({resultado: 'A soma dos numeros é: ' + resultadoCalculo });
+        this.setState({resultado: 'A subtracao dos numeros é: ' + resultadoCalculo });
     }
 
 
@@ -48,7 +48,7 @@ export default class Aula_4 extends Component{
         let val2 = parseFloat(this.state.valor2);
         resultadoCalculo = val1 * val2;
 
-        this.setState({resultado: 'A soma dos numeros é: ' + resultadoCalculo });
+        this.setState({resultado: 'A multiplicacao dos numeros é: ' + resultadoCalculo });
     }
 
     dividir(){
@@ -57,7 +57,7 @@ export default class Aula_4 extends Component{
         let val2 = parseFloat(this.state.valor2);
         resultadoCalculo = val1 / val2;
 
-        this.setState({resultado: 'A soma dos numeros é: ' + resultadoCalculo });
+        this.setState({resultado: 'A divisao dos numeros é: ' + resultadoCalculo });
     }
 
     
@@ -70,7 +70,7 @@ export default class Aula_4 extends Component{
                     style={styles.input}
                     placeholder="Digite um numero"
                     onChangeText={(texto) => this.setState({valor1: texto}) }
-
+                    keyboardType='numeric'
                     />
                 </View>
                 <View>
@@ -79,19 +79,23 @@ export default class Aula_4 extends Component{
                     style={styles.input}
                     placeholder="Digite um numero"
                     onChangeText = {(texto) => this.setState({valor2: texto}) }
-
+                    keyboardType='numeric'
                     />
                 </View>
-                <View>
-                 
-                   <Button style={styles.botao}                     
-                     title="+" onPress={this.somar}/>
-                    <Button   style={styles.botao}                      
-                     title="-" onPress={this.subtrair}/>
-                     <Button   style={styles.botao}                      
-                     title="X" onPress={this.multiplicar}/>
-                     <Button    style={styles.botao}                     
-                     title="/" onPress={this.dividir}/>
+                <View style={styles.operacao}>
+                 <TouchableOpacity style={styles.botao}  onPress={this.somar}>
+                    <Text style={styles.textoBotao}> + </Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity style={styles.botao}  onPress={this.subtrair}>
+                    <Text style={styles.textoBotao}> - </Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity style={styles.botao}  onPress={this.multiplicar}>
+                    <Text style={styles.textoBotao}> X </Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity style={styles.botao}  onPress={this.dividir}>
+                    <Text style={styles.textoBotao}> / </Text>
+                 </TouchableOpacity>
+
 
                     <Text style={styles.textoDigitado}> 
                      {this.state.resultado}
@@ -108,7 +112,8 @@ export default class Aula_4 extends Component{
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        marginTop:30
+        marginTop:30,
+
     },
     input:{
         height:45,
@@ -122,6 +127,23 @@ const styles = StyleSheet.create({
         fontSize:25
     },
     botao:{
-       fontSize:30
+       fontSize:30,
+       backgroundColor:'#333',
+       borderRadius:25,
+       width:150,
+       justifyContent:'center',
+       marginLeft:125,
+       borderColor:'blue',
+       borderWidth:3,
+       marginTop:5
+    },
+    textoBotao:{
+        fontSize:30,
+        color:'white',
+        textAlign:'center',
+        borderRadius:25
+    },
+    operacao:{
+
     }
 });
